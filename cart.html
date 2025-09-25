@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سلة المشتريات - مكتبة أوزيريس</title>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+    <!-- Particle System Background -->
+    <div class="particles-container" id="particlesContainer"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-glow"></div>
+        <div class="header-container">
+            <div class="header-top">
+                <div class="logo-section">
+                    <div class="floating-logo-book">
+                        <div class="logo-book-cover">
+                            <div class="logo-book-spine"></div>
+                            <div class="logo-book-pages">
+                                <div class="page"></div>
+                                <div class="page"></div>
+                                <div class="page"></div>
+                            </div>
+                            <div class="logo-book-content">
+                                <i class="fas fa-infinity"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Osiris Logo Image -->
+                    <div class="osiris-logo">
+                        <img src="images/header.png" alt="Osiris Logo" class="osiris-logo-img">
+                        <div class="logo-glow"></div>
+                    </div>
+
+                    <div class="logo-text">
+                        <h1 class="glowing-text">OSIRIS BOOKSHOP</h1>
+                        <p class="subtitle-text">مكتبة أوزيريس للكتب العلمية</p>
+                        <div class="logo-underline"></div>
+                    </div>
+                </div>
+
+                <div class="header-actions">
+                    <div class="search-container">
+                        <div class="search-glow"></div>
+                        <input type="text" class="search-input" placeholder="ابحث في عالم المعرفة...">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                            <div class="btn-ripple"></div>
+                        </button>
+                    </div>
+
+                    <div class="user-menu">
+                        <a href="login.html" class="user-link glassmorphism">
+                            <i class="fas fa-user"></i>
+                            <span>حسابي</span>
+                            <div class="link-glow"></div>
+                        </a>
+                        <a href="home.html" class="user-link glassmorphism">
+                            <i class="fas fa-home"></i>
+                            <span>الرئيسية</span>
+                            <div class="link-glow"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="home.html" class="nav-link" data-text="الرئيسية"><i class="fas fa-home"></i> الرئيسية</a></li>
+
+                    <li><a href="author.html" class="nav-link" data-text="المؤلفون"><i class="fas fa-users"></i> المؤلفون</a></li>
+                    <li><a href="publisher.html" class="nav-link" data-text="الناشرون"><i class="fas fa-building"></i> الناشرون</a></li>
+                    <li><a href="cart.html" class="nav-link active" data-text="سله المشتريات"><i class="fas fa-shopping-cart"></i> سله المشتريات</a></li>
+                    <li><a href="login.html" class="nav-link" data-text="تسجيل دخول"><i class="fas fa-sign-in-alt"></i> تسجيل دخول</a></li>
+                </ul>
+                <div class="nav-indicator"></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+        <div class="cart-background-effects">
+            <div class="cart-gradient-orb orb-1"></div>
+            <div class="cart-gradient-orb orb-2"></div>
+            <div class="cart-gradient-orb orb-3"></div>
+        </div>
+
+        <div class="cart-container">
+            <!-- Cart Header -->
+            <div class="cart-header">
+                <h2 class="cart-title">
+                    <i class="fas fa-shopping-cart cart-title-icon"></i> سلة المشتريات
+                </h2>
+                <div class="cart-stats">
+                    <div class="cart-stat-item">
+                        <span class="stat-label">عدد المنتجات:</span>
+                        <span class="stat-value" id="itemsCount">3</span>
+                    </div>
+                    <div class="cart-stat-item">
+                        <span class="stat-label">المجموع:</span>
+                        <span class="stat-value" id="totalAmount">375.00 ج.م</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cart Content -->
+            <div class="cart-content">
+                <!-- Cart Items -->
+                <div class="cart-items-section">
+                    <div class="section-header">
+                        <h3>المنتجات المضافة</h3>
+                        <button class="clear-cart-btn">
+                            <i class="fas fa-trash"></i>
+                            تفريغ السلة
+                        </button>
+                    </div>
+
+                    <div class="cart-items" id="cartItems">
+                        <!-- Cart items will be loaded here by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary-section">
+                    <div class="order-summary-card glassmorphism">
+                        <div class="summary-glow"></div>
+
+                        <h3 class="summary-title">
+                            <i class="fas fa-receipt"></i> ملخص الطلب
+                        </h3>
+
+                        <div class="summary-details">
+                            <div class="summary-row">
+                                <span>السعر الإجمالي</span>
+                                <span id="subtotal">350.00 ج.م</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>خصم (10%)</span>
+                                <span class="discount">-35.00 ج.م</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>تكلفة الشحن</span>
+                                <span>25.00 ج.م</span>
+                            </div>
+                            <div class="summary-divider"></div>
+                            <div class="summary-row total">
+                                <span>المبلغ الإجمالي</span>
+                                <span id="grandTotal">375.00 ج.م</span>
+                            </div>
+                        </div>
+
+                        <div class="coupon-section">
+                            <div class="input-group">
+                                <input type="text" placeholder="أدخل كود الخصم" id="couponCode">
+                                <button class="apply-coupon-btn">
+                                    <i class="fas fa-tag"></i>
+                                    تطبيق
+                                </button>
+                            </div>
+                        </div>
+
+                        <button class="checkout-btn">
+                            <i class="fas fa-lock"></i>
+                            اتمام الشراء
+                            <div class="btn-bg-animation"></div>
+                        </button>
+
+                        <div class="secure-payment">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>دفع آمن ومحمي</span>
+                        </div>
+                    </div>
+
+                    <!-- Recommended Books -->
+                    <div class="recommended-books">
+                        <h3>كتب قد تعجبك</h3>
+                        <div class="recommended-list">
+                            <div class="recommended-item">
+                                <div class="recommended-image">
+                                    <img src="https://via.placeholder.com/80x120/1a1a1a/ffffff?text=كتاب" alt="كتاب مقترح">
+                                </div>
+                                <div class="recommended-info">
+                                    <h4>الفيزياء الحديثة</h4>
+                                    <p>120.00 ج.م</p>
+                                    <button class="add-to-cart-sm">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="recommended-item">
+                                <div class="recommended-image">
+                                    <img src="https://via.placeholder.com/80x120/1a1a1a/ffffff?text=كتاب" alt="كتاب مقترح">
+                                </div>
+                                <div class="recommended-info">
+                                    <h4>تعلم الإنجليزية</h4>
+                                    <p>85.00 ج.م</p>
+                                    <button class="add-to-cart-sm">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Action Buttons -->
+    <div class="cart-fab">
+        <button class="fab-btn continue-shopping">
+            <i class="fas fa-arrow-right"></i>
+            <span>مواصلة التسوق</span>
+        </button>
+        <button class="fab-btn quick-checkout">
+            <i class="fas fa-bolt"></i>
+            <span>شراء سريع</span>
+        </button>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="cart.js"></script>
+</body>
+
+</html>

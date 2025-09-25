@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عن الموقع - مكتبة أوزيريس للكتب العلمية</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="about.css">
+</head>
+
+<body>
+    <!-- Advanced Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-container">
+            <div class="animated-book">
+                <div class="book-cover book-cover-front">
+                    <div class="book-title-loading">أوزيريس</div>
+                    <div class="book-subtitle-loading">عن المكتبة</div>
+                    <div class="book-decoration">
+                        <div class="decoration-line"></div>
+                        <i class="fas fa-info-circle"></i>
+                        <div class="decoration-line"></div>
+                    </div>
+                </div>
+                <div class="book-spine"></div>
+                <div class="book-back"></div>
+            </div>
+
+            <div class="loading-text">
+                <div class="loading-dots">
+                    <span>جاري تحميل معلومات المكتبة</span>
+                    <div class="dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-text">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Particle System Background -->
+    <div class="particles-container" id="particlesContainer"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-glow"></div>
+        <div class="header-container">
+            <!-- Top Bar -->
+            <div class="header-top">
+                <div class="logo-section">
+                    <div class="floating-logo-book">
+                        <div class="logo-book-cover">
+                            <div class="logo-book-spine"></div>
+                            <div class="logo-book-pages">
+                                <div class="page"></div>
+                                <div class="page"></div>
+                                <div class="page"></div>
+                            </div>
+                            <div class="logo-book-content">
+                                <i class="fas fa-infinity"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Osiris Logo Image -->
+                    <div class="osiris-logo">
+                        <img src="images/header.png" alt="Osiris Logo" class="osiris-logo-img">
+                        <div class="logo-glow"></div>
+                    </div>
+
+                    <div class="logo-text">
+                        <h1 class="glowing-text">OSIRIS BOOKSHOP</h1>
+                        <p class="subtitle-text">مكتبة أوزيريس للكتب العلمية</p>
+                        <div class="logo-underline"></div>
+                    </div>
+                </div>
+
+                <div class="header-actions">
+                    <div class="search-container">
+                        <div class="search-glow"></div>
+                        <input type="text" class="search-input" placeholder="ابحث في المكتبة...">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                            <div class="btn-ripple"></div>
+                        </button>
+                        <div class="search-suggestions" id="searchSuggestions"></div>
+                    </div>
+
+                    <div class="user-menu">
+                        <a href="signup.html" target="_blank" class="user-link glassmorphism">
+                            <i class="fas fa-user"></i>
+                            <span>حسابي</span>
+                            <div class="link-glow"></div>
+                        </a>
+                        <a href="cart.html" class="cart-link glassmorphism" onclick="return true;">
+                            <i class="fas fa-shopping-cart cart-icon-animated"></i>
+                            <span class="cart-count">0</span>
+                            <div class="cart-pulse"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="home.html" class="nav-link" data-text="الرئيسية"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="about.html" class="nav-link active" data-text="عن الموقع"><i class="fas fa-info-circle"></i> عن الموقع</a></li>
+                    <li><a href="publication.html" class="nav-link" data-text="اصدراتنا"><i class="fas fa-book"></i> اصدراتنا</a></li>
+                    <li><a href="publisher.html" class="nav-link" data-text="الناشرون"><i class="fas fa-building"></i> الناشرون</a></li>
+                    <li><a href="author.html" class="nav-link" data-text="المؤلفون"><i class="fas fa-user-pen"></i> المؤلفون</a></li>
+                    <li><a href="catalog.html" class="nav-link" data-text="الكتالوجات"><i class="fas fa-book-open"></i> الكتالوجات</a></li>
+                    <li><a href="cart.html" class="nav-link" data-text="سله المشتريات"><i class="fas fa-shopping-cart"></i> سله المشتريات</a></li>
+                    <li><a href="news.html" class="nav-link" data-text="اخبار و احداث"><i class="fas fa-newspaper"></i> اخبار و احداث</a></li>
+                    <li><a href="connect.html" class="nav-link" data-text="اتصل بنا"><i class="fas fa-phone"></i> اتصل بنا</a></li>
+                </ul>
+                <div class="nav-indicator"></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Hero Banner -->
+    <section class="about-hero">
+        <div class="hero-background-effects">
+            <div class="hero-gradient-orb orb-1"></div>
+            <div class="hero-gradient-orb orb-2"></div>
+            <div class="hero-gradient-orb orb-3"></div>
+        </div>
+
+        <div class="about-container">
+            <div class="about-header">
+                <h1 class="about-title">عن مكتبة أوزيريس</h1>
+                <p class="about-subtitle">رحلة معرفة تمتد لأكثر من 15 عاماً في خدمة العلم والمعرفة</p>
+            </div>
+
+            <div class="about-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-number" id="yearsCount">0</span>
+                        <span class="stat-label">عاماً من الخبرة</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-number" id="booksCount">0</span>
+                        <span class="stat-label">كتاب متنوع</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-number" id="customersCount">0</span>
+                        <span class="stat-label">عميل راض</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <div class="scroll-text">اكتشف قصتنا</div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Our Story Section -->
+        <section class="story-section">
+            <div class="section-header">
+                <h2 class="section-title">قصتنا</h2>
+                <p class="section-subtitle">رحلة تأسيس مكتبة أوزيريس وتطورها عبر السنوات</p>
+            </div>
+
+            <div class="story-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2008</div>
+                    <div class="timeline-content glassmorphism">
+                        <h3>التأسيس</h3>
+                        <p>بدأت رحلة أوزيريس بمكتبة صغيرة في قلب القاهرة، متخصصة في الكتب العلمية والأكاديمية لتلبية احتياجات الباحثين والطلاب.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2012</div>
+                    <div class="timeline-content glassmorphism">
+                        <h3>التوسع</h3>
+                        <p>قمنا بتوسعة نطاق عملنا ليشمل التعامل مع أكبر دور النشر العالمية المتخصصة في المجالات العلمية المختلفة.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2016</div>
+                    <div class="timeline-content glassmorphism">
+                        <h3>التحول الرقمي</h3>
+                        <p>أطلقنا منصتنا الإلكترونية لتقديم خدمة أوسع وتوصيل الكتب إلى جميع أنحاء الوطن العربي.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content glassmorphism">
+                        <h3>الريادة</h3>
+                        <p>أصبحنا الوجهة الأولى للكتب العلمية المتخصصة في المنطقة، مع قاعدة عملاء تزيد عن 50,000 عميل.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision Section -->
+        <section class="mission-section">
+            <div class="mission-container">
+                <div class="mission-card glassmorphism">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>رسالتنا</h3>
+                    <p>تقديم أفضل الكتب العلمية والأكاديمية من مصادرها الموثوقة، وتمكين الباحثين والطلاب من الوصول إلى المعرفة بسهولة ويسر.</p>
+                </div>
+                <div class="vision-card glassmorphism">
+                    <div class="vision-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>رؤيتنا</h3>
+                    <p>أن نكون المكتبة الرائدة في توفير المحتوى العلمي المتخصص في العالم العربي، ونشر المعرفة والثقافة العلمية في مجتمعنا.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="values-section">
+            <div class="section-header">
+                <h2 class="section-title">قيمنا</h2>
+                <p class="section-subtitle">المبادئ التي نؤمن بها ونسير عليها في رحلتنا</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-item glassmorphism">
+                    <div class="value-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>الجودة</h3>
+                    <p>نحرص على تقديم أفضل الكتب من دور النشر العالمية الموثوقة والمعتمدة.</p>
+                </div>
+                <div class="value-item glassmorphism">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>المصداقية</h3>
+                    <p>نضمن أصالة وجودة كل كتاب نقدمه، مع توثيق كامل لمصادره.</p>
+                </div>
+                <div class="value-item glassmorphism">
+                    <div class="value-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>خدمة العملاء</h3>
+                    <p>نقدم دعماً متكاملاً للعملاء قبل وبعد الشراء لضمان رضاهم التام.</p>
+                </div>
+                <div class="value-item glassmorphism">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>الابتكار</h3>
+                    <p>نسعى دائماً لتطوير خدماتنا وتقديم تجربة شراء فريدة ومتميزة.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <div class="section-header">
+                <h2 class="section-title">فريقنا</h2>
+                <p class="section-subtitle">الخبراء والمتخصصون الذين يقفون وراء نجاح أوزيريس</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member glassmorphism">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="المدير العام">
+                        <div class="member-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>أحمد السيد</h3>
+                    <p class="member-role">المدير العام والمؤسس</p>
+                    <p class="member-bio">خبير في مجال النشر العلمي مع أكثر من 20 عاماً من الخبرة.</p>
+                </div>
+                <div class="team-member glassmorphism">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="مدير التحرير">
+                        <div class="member-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>فاطمة محمد</h3>
+                    <p class="member-role">مديرة التحرير والمحتوى</p>
+                    <p class="member-bio">متخصصة في اختيار وتقييم الكتب العلمية والأكاديمية.</p>
+                </div>
+                <div class="team-member glassmorphism">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="مدير التقنية">
+                        <div class="member-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>خالد محمود</h3>
+                    <p class="member-role">مدير التقنية والمنصة</p>
+                    <p class="member-bio">مطور وخبير في بناء المنصات الإلكترونية والتجارة الإلكترونية.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section class="partners-section">
+            <div class="section-header">
+                <h2 class="section-title">شركاؤنا</h2>
+                <p class="section-subtitle">دور النشر والجهات التي نتعاون معها</p>
+            </div>
+
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x80/1a1a1a/ffffff?text=OXFORD" alt="Oxford University Press">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x80/1a1a1a/ffffff?text=CAMBRIDGE" alt="Cambridge University Press">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x80/1a1a1a/ffffff?text=McGraw-Hill" alt="McGraw-Hill">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x80/1a1a1a/ffffff?text=PEARSON" alt="Pearson">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x80/1a1a1a/ffffff?text=WILEY" alt="Wiley">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x80/1a1a1a/ffffff?text=SPRINGER" alt="Springer">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA Section -->
+        <section class="contact-cta-section">
+            <div class="cta-container glassmorphism">
+                <div class="cta-content">
+                    <h2>هل تريد معرفة المزيد عنا؟</h2>
+                    <p>تواصل معنا لمعرفة المزيد عن خدماتنا أو لطلب استشارة متخصصة</p>
+                    <div class="cta-buttons">
+                        <a href="connect.html" class="cta-btn primary">
+                            <i class="fas fa-phone"></i> اتصل بنا
+                        </a>
+                        <a href="catalog.html" class="cta-btn secondary">
+                            <i class="fas fa-book-open"></i> تصفح الكتالوج
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Enhanced Footer -->
+    <footer class="footer-enhanced">
+        <div class="footer-background-effects">
+            <div class="footer-orb orb-1"></div>
+            <div class="footer-orb orb-2"></div>
+            <div class="footer-orb orb-3"></div>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section company-info">
+                    <div class="footer-logo-enhanced">
+                        <div class="footer-book-icon">
+                            <i class="fas fa-book"></i>
+                            <div class="book-glow-footer"></div>
+                        </div>
+                        
+                        <!-- Footer Osiris Logo -->
+                        <div class="footer-osiris-logo">
+                            <img src="images/header.png" alt="Osiris Logo" class="footer-osiris-logo-img">
+                            <div class="footer-logo-glow"></div>
+                        </div>
+                        
+                        <div class="footer-text">
+                            <h3>مكتبة أوزيريس</h3>
+                            <p>الكتب العلمية المتخصصة</p>
+                        </div>
+                    </div>
+                    <p class="company-description">
+                        مكتبة متخصصة في توفير أفضل الكتب العلمية والأكاديمية من مصادرها الموثوقة، نخدم الباحثين والطلاب في جميع أنحاء الوطن العربي منذ عام 2008.
+                    </p>
+                    <div class="social-links-enhanced">
+                        <a href="#" class="social-link-enhanced facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <div class="social-glow"></div>
+                        </a>
+                        <a href="#" class="social-link-enhanced twitter">
+                            <i class="fab fa-twitter"></i>
+                            <div class="social-glow"></div>
+                        </a>
+                        <a href="#" class="social-link-enhanced instagram">
+                            <i class="fab fa-instagram"></i>
+                            <div class="social-glow"></div>
+                        </a>
+                        <a href="#" class="social-link-enhanced linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                            <div class="social-glow"></div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul class="footer-links-enhanced">
+                        <li><a href="home.html" class="footer-link-hover">الرئيسية</a></li>
+                        <li><a href="about.html" class="footer-link-hover">عن الموقع</a></li>
+                        <li><a href="catalog.html" class="footer-link-hover">الكتالوجات</a></li>
+                        <li><a href="news.html" class="footer-link-hover">الأخبار</a></li>
+                        <li><a href="connect.html" class="footer-link-hover">اتصل بنا</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h4>معلومات الاتصال</h4>
+                    <div class="contact-info-enhanced">
+                        <div class="contact-item-enhanced">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <span>123 شارع التحرير، القاهرة، مصر</span>
+                        </div>
+                        <div class="contact-item-enhanced">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <span>+20 2 1234 5678</span>
+                        </div>
+                        <div class="contact-item-enhanced">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <span>info@osirisbookshop.com</span>
+                        </div>
+                        <div class="contact-item-enhanced">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <span>الأحد - الخميس: 9:00 - 18:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom-enhanced">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 <strong>مكتبة أوزيريس</strong>. جميع الحقوق محفوظة.</p>
+                    <p>Powered by InnoCity for Information Technology</p>
+                </div>
+                <div class="footer-animation-line"></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-sun sun"></i>
+        <i class="fas fa-moon moon"></i>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="floating-action-btn" id="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+        <div class="fab-glow"></div>
+    </div>
+    <!-- Scripts -->
+    <script src="about.js"></script>
+</body>
+
+</html>

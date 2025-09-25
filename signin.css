@@ -1,0 +1,86 @@
+/* تحسينات Responsive 100% لصفحة تسجيل الدخول (signin) بدون تغيير في التصميم */
+
+
+/* 1. تأكد أن كل الحاويات الرئيسية لا تخرج عن الشاشة */
+
+html,
+body,
+.signin-container,
+.signin-section,
+.footer-container {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+
+
+/* 2. الصور والفيديوهات مرنة دائمًا */
+
+img,
+video {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
+
+
+/* 3. الجريدات والفلكسات تتحول لعمود واحد على الشاشات الصغيرة جدًا */
+
+@media (max-width: 600px) {
+    .signin-content,
+    .signin-form,
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        padding: 0.5rem !important;
+    }
+    .signin-header,
+    .signin-form {
+        padding: 1rem !important;
+    }
+}
+
+
+/* 4. تصغير حجم الخطوط تلقائيًا على الشاشات الصغيرة جدًا */
+
+@media (max-width: 400px) {
+    html {
+        font-size: 13px !important;
+    }
+}
+
+
+/* 5. إصلاح أي عنصر فيه min-width كبير أو width ثابت */
+
+[class*="container"],
+[class*="content"],
+[class*="section"],
+[class*="grid"],
+[class*="sidebar"] {
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+}
+
+
+/* 6. شريط التنقل دائمًا بعرض الشاشة */
+
+.header,
+.nav-menu {
+    width: 100vw !important;
+    min-width: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+
+
+/* 7. إخفاء التمرير الأفقي دائمًا */
+
+body,
+html {
+    overflow-x: hidden !important;
+}

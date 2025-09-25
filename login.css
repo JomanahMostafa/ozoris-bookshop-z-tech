@@ -1,0 +1,578 @@
+/* OSIRIS BOOKSHOP - Login Page Styles */
+
+
+/* Import Main Variables */
+
+@import url('home.css');
+
+/* Login Section */
+
+.login-section {
+    padding: 4rem 0;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-background-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.login-gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+    animation: orbFloat 20s ease-in-out infinite;
+}
+
+.login-gradient-orb.orb-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--gradient-primary);
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.login-gradient-orb.orb-2 {
+    width: 300px;
+    height: 300px;
+    background: var(--gradient-secondary);
+    bottom: 20%;
+    right: 15%;
+    animation-delay: 5s;
+}
+
+.login-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Login Card */
+
+.login-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--glass-shadow);
+    width: 100%;
+    max-width: 450px;
+}
+
+.login-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.login-card:hover .login-glow {
+    opacity: 0.05;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.login-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    position: relative;
+}
+
+.login-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.login-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+}
+
+
+/* Form Styles */
+
+.login-form {
+    position: relative;
+    z-index: 2;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    background: rgba(42, 42, 42, 0.5);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+    outline: none;
+    padding-left: 3rem;
+}
+
+.input-group input:focus {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+.input-glow {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-primary);
+    border-radius: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.input-group input:focus~.input-glow {
+    opacity: 0.3;
+}
+
+.password-toggle {
+    position: absolute;
+    left: 15px;
+    top: 55%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.5);
+    transition: var(--transition-smooth);
+    z-index: 2;
+}
+
+.password-toggle:hover {
+    color: var(--accent-cyan);
+}
+
+.password-toggle.active {
+    color: var(--accent-cyan);
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem 0;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.remember-me input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent-cyan);
+}
+
+.remember-me label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.forgot-password {
+    color: var(--accent-cyan);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition-smooth);
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--gradient-primary);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.login-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.login-footer p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.login-footer a {
+    color: var(--accent-cyan);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+.social-login {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.social-login p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.social-login p::before,
+.social-login p::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background: var(--glass-border);
+}
+
+.social-login p::before {
+    right: 0;
+}
+
+.social-login p::after {
+    left: 0;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-btn.facebook {
+    background: #3b5998;
+}
+
+.social-btn.google {
+    background: #db4437;
+}
+
+.social-btn.twitter {
+    background: #1da1f2;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 576px) {
+    .login-card {
+        padding: 2rem 1.5rem;
+    }
+    .login-title {
+        font-size: 1.8rem;
+    }
+    .remember-forgot {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    .social-buttons {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* تحسينات Responsive 100% لصفحة تسجيل الدخول بدون تغيير في التصميم */
+
+
+/* 1. تأكد أن كل الحاويات الرئيسية لا تخرج عن الشاشة */
+
+html,
+body,
+.login-container,
+.login-section,
+.footer-container {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+
+
+/* 2. الصور والفيديوهات مرنة دائمًا */
+
+img,
+video {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
+
+
+/* 3. الجريدات والفلكسات تتحول لعمود واحد على الشاشات الصغيرة جدًا */
+
+@media (max-width: 600px) {
+    .login-content,
+    .login-form,
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        padding: 0.5rem !important;
+    }
+    .login-header,
+    .login-form {
+        padding: 1rem !important;
+    }
+}
+
+
+/* 4. تصغير حجم الخطوط تلقائيًا على الشاشات الصغيرة جدًا */
+
+@media (max-width: 400px) {
+    html {
+        font-size: 13px !important;
+    }
+}
+
+
+/* 5. إصلاح أي عنصر فيه min-width كبير أو width ثابت */
+
+[class*="container"],
+[class*="content"],
+[class*="section"],
+[class*="grid"],
+[class*="sidebar"] {
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+}
+
+
+/* 6. شريط التنقل دائمًا بعرض الشاشة */
+
+.header,
+.nav-menu {
+    width: 100vw !important;
+    min-width: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+
+
+/* 7. إخفاء التمرير الأفقي دائمًا */
+
+body,
+html {
+    overflow-x: hidden !important;
+}
+
+
+/* Animation for form elements */
+
+.login-form .input-group {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.login-form .input-group:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.login-form .input-group:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.login-form .remember-forgot {
+    animation-delay: 0.3s;
+}
+
+.login-form .login-btn {
+    animation-delay: 0.4s;
+}
+
+.login-form .login-footer {
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Error Messages */
+
+.error-message {
+    color: #ff6b6b;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.input-group.error input {
+    border-color: #ff6b6b;
+}
+
+
+/* Notification Styles */
+
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: var(--accent-green);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 10000;
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.notification.error {
+    background: #ff6b6b;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.notification-content i {
+    font-size: 1.2rem;
+}
+
+
+/* Password Toggle Styles */
+
+.password-toggle {
+    position: absolute;
+    left: 15px;
+    top: 55%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.5);
+    transition: var(--transition-smooth);
+    z-index: 2;
+}
+
+.password-toggle:hover {
+    color: var(--accent-cyan);
+}
+
+.password-toggle.active {
+    color: var(--accent-cyan);
+}
+
+
+/* تعديل مكان حقل الإدخال ليكون هناك مساحة للأيقونة */
+
+.input-group input[type="password"],
+.input-group input[type="text"] {
+    padding-right: 1.2rem;
+    padding-left: 3rem;
+    /* مساحة أكبر للأيقونة على اليسار */
+}

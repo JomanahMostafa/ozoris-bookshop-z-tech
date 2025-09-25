@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة أوزيريس للكتب العلمية - OSIRIS BOOKSHOP</title>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <!-- Advanced Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-container">
+            <div class="animated-book">
+                <div class="book-cover book-cover-front">
+                    <div class="book-title-loading">أوزيريس</div>
+                    <div class="book-subtitle-loading">للكتب العلمية</div>
+                    <div class="book-decoration">
+                        <div class="decoration-line"></div>
+                        <i class="fas fa-book-open"></i>
+                        <div class="decoration-line"></div>
+                    </div>
+                </div>
+                <div class="book-spine"></div>
+                <div class="book-back"></div>
+            </div>
+
+            <div class="loading-text">
+                <div class="loading-dots">
+                    <span>جاري تحضير مكتبتك</span>
+                    <div class="dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-text">0%</div>
+            </div>
+        </div>
+
+        <!-- Floating Books Animation -->
+        <div class="floating-books">
+            <div class="floating-book book-1"><i class="fas fa-book"></i></div>
+            <div class="floating-book book-2"><i class="fas fa-book-open"></i></div>
+            <div class="floating-book book-3"><i class="fas fa-graduation-cap"></i></div>
+            <div class="floating-book book-4"><i class="fas fa-language"></i></div>
+            <div class="floating-book book-5"><i class="fas fa-flask"></i></div>
+            <div class="floating-book book-6"><i class="fas fa-calculator"></i></div>
+        </div>
+    </div>
+
+    <!-- Particle System Background -->
+    <div class="particles-container" id="particlesContainer"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-glow"></div>
+        <div class="header-container">
+            <!-- Top Bar -->
+            <div class="header-top">
+                <div class="logo-section">
+                    <div class="floating-logo-book">
+                        <div class="logo-book-cover">
+                            <div class="logo-book-spine"></div>
+                            <div class="logo-book-pages">
+                                <div class="page"></div>
+                                <div class="page"></div>
+                                <div class="page"></div>
+                            </div>
+                            <div class="logo-book-content">
+                                <i class="fas fa-infinity"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Osiris Logo Image -->
+                    <div class="osiris-logo">
+                        <img src="images/header.png" alt="Osiris Logo" class="osiris-logo-img">
+                        <div class="logo-glow"></div>
+                    </div>
+
+                    <div class="logo-text">
+                        <h1 class="glowing-text">OSIRIS BOOKSHOP</h1>
+                        <p class="subtitle-text">مكتبة أوزيريس للكتب العلمية</p>
+                        <div class="logo-underline"></div>
+                    </div>
+                </div>
+
+                <div class="header-actions">
+                    <div class="search-container">
+                        <div class="search-glow"></div>
+                        <input type="text" class="search-input" placeholder="ابحث في عالم المعرفة...">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                            <div class="btn-ripple"></div>
+                        </button>
+                        <div class="search-suggestions" id="searchSuggestions"></div>
+                    </div>
+
+                    <div class="user-menu">
+                        <a href="signup.html" target="_blank" class="user-link glassmorphism">
+                            <i class="fas fa-user"></i>
+                            <span>حسابي</span>
+                            <div class="link-glow"></div>
+                        </a>
+                        <a href="cart.html" class="cart-link glassmorphism" onclick="return true;">
+                            <i class="fas fa-shopping-cart cart-icon-animated"></i>
+                            <span class="cart-count">0</span>
+                            <div class="cart-pulse"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="home.html" class="nav-link active" data-text="الرئيسية"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="about.html" class="nav-link" data-text="عن الموقع"><i class="fas fa-info-circle"></i> عن الموقع</a></li>
+                    <li><a href="publication.html" onclick="return true" class="nav-link" data-text="اصدراتنا"><i class="fas fa-book"></i> اصدراتنا</a></li>
+                    <li><a href="publisher.html" onclick="return true" class="nav-link" data-text="الناشرون"><i class="fas fa-building"></i> الناشرون</a></li>
+                    <li><a href="author.html" class="nav-link" data-text="المؤلفون"><i class="fas fa-user-pen"></i> المؤلفون</a></li>
+                    <li><a href="catalog.html" class="nav-link" data-text="لكتالوجات"><i class="fas fa-book-open"></i> لكتالوجات</a></li>
+                    <li><a href="cart.html" onclick="return true;" class="nav-link" data-text="سله المشتريات"><i class="fas fa-shopping-cart"></i> سله المشتريات</a></li>
+                    <li><a href="news.html" class="nav-link" data-text="اخبار و احداث"><i class="fas fa-newspaper"></i> اخبار و احداث</a></li>
+                    <li><a href="connect.html" class="nav-link" data-text="اتصل بنا"><i class="fas fa-phone"></i> اتصل بنا</a></li>
+                </ul>
+                <div class="nav-indicator"></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="hero-background-effects">
+            <div class="hero-gradient-orb orb-1"></div>
+            <div class="hero-gradient-orb orb-2"></div>
+            <div class="hero-gradient-orb orb-3"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2 class="hero-title">
+                    <span class="word" data-delay="0">مرحباً</span>
+                    <span class="word" data-delay="200">بك</span>
+                    <span class="word" data-delay="400">في</span>
+                    <span class="word" data-delay="600">مكتبة</span>
+                    <span class="word hero-highlight" data-delay="800">أوزيريس</span>
+                </h2>
+                <p class="hero-subtitle animated-text">للكتب العلمية والأكاديمية المتخصصة</p>
+                <div class="hero-description">
+                    <p class="typing-text">اكتشف أكبر مجموعة من الكتب العلمية والأكاديمية المتخصصة</p>
+                    <div class="hero-tags">
+                        <span class="tag">قواميس</span>
+                        <span class="tag">مراجع</span>
+                        <span class="tag">كتب أكاديمية</span>
+                        <span class="tag">كتب لغات</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <button class="cta-btn primary-cta">
+                        <span>اكتشف الكتب</span>
+                        <i class="fas fa-arrow-down"></i>
+                        <div class="btn-bg-animation"></div>
+                    </button>
+                    <button class="cta-btn secondary-cta">
+                        <span>تصفح الأقسام</span>
+                        <i class="fas fa-th-large"></i>
+                        <div class="btn-bg-animation"></div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="floating-mega-book">
+                    <div class="mega-book-container">
+                        <div class="mega-book-cover">
+                            <div class="book-glow"></div>
+                            <div class="book-content">
+                                <div class="book-title-hero">أوزيريس</div>
+                                <div class="book-divider"></div>
+                                <div class="book-subtitle-hero">مكتبة المعرفة</div>
+                                <div class="book-icon-hero">
+                                    <i class="fas fa-infinity infinity-rotating"></i>
+                                </div>
+                            </div>
+                            <div class="book-pages-effect">
+                                <div class="page-turn page-1"></div>
+                                <div class="page-turn page-2"></div>
+                                <div class="page-turn page-3"></div>
+                            </div>
+                        </div>
+                        <div class="mega-book-spine"></div>
+                    </div>
+
+                    <!-- Orbiting Elements -->
+                    <div class="orbiting-elements">
+                        <div class="orbit orbit-1">
+                            <div class="orbit-item"><i class="fas fa-book"></i></div>
+                        </div>
+                        <div class="orbit orbit-2">
+                            <div class="orbit-item"><i class="fas fa-graduation-cap"></i></div>
+                        </div>
+                        <div class="orbit orbit-3">
+                            <div class="orbit-item"><i class="fas fa-language"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <div class="scroll-text">تصفح المزيد</div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar glassmorphism-sidebar">
+            <div class="sidebar-glow"></div>
+
+            <!-- Publishers Section -->
+            <div class="sidebar-section animated-section">
+                <h3 class="sidebar-title">
+                    <i class="fas fa-building"></i>
+                    <span>الناشرون</span>
+                    <div class="title-underline"></div>
+                </h3>
+                <div class="publisher-card oxford-enhanced">
+                    <div class="publisher-glow"></div>
+                    <div class="publisher-logo">
+                        <div class="logo-animation">
+                            <strong class="oxford-text">OXFORD</strong>
+                            <span class="university-text">UNIVERSITY PRESS</span>
+                            <strong class="india-text">INDIA</strong>
+                        </div>
+                        <div class="publisher-particles">
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="sidebar-section animated-section">
+                <h3 class="sidebar-title">
+                    <i class="fas fa-th-large"></i>
+                    <span>فئات الكتب</span>
+                    <div class="title-underline"></div>
+                </h3>
+                <div class="category-list">
+                    <a href="#" class="category-item hover-glow" data-category="dictionaries">
+                        <div class="category-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <span>القواميس</span>
+                        <div class="category-arrow">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                    </a>
+                    <a href="#" class="category-item hover-glow" data-category="modern">
+                        <div class="category-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <span>الكتب الحديثة</span>
+                        <div class="category-arrow">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                    </a>
+                    <a href="#" class="category-item hover-glow" data-category="bestsellers">
+                        <div class="category-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>الأكثر مبيعاً</span>
+                        <div class="category-arrow">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                    </a>
+                    <a href="#" class="category-item hover-glow" data-category="academic">
+                        <div class="category-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <span>كتب أكاديمية</span>
+                        <div class="category-arrow">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Featured Books Section -->
+            <section class="featured-books">
+                <div class="section-header">
+                    <div class="section-title-container">
+                        <h2 class="section-title glowing-section-title">الكتب المميزة</h2>
+                        <div class="section-decoration">
+                            <div class="decoration-dot"></div>
+                            <div class="decoration-line-long"></div>
+                            <div class="decoration-dot"></div>
+                        </div>
+                    </div>
+
+                    <div class="section-controls">
+                        <button class="filter-btn active glow-btn" data-filter="all">
+                            <span>الكل</span>
+                            <div class="btn-glow"></div>
+                        </button>
+                        <button class="filter-btn glow-btn" data-filter="dictionaries">
+                            <span>قواميس</span>
+                            <div class="btn-glow"></div>
+                        </button>
+                        <button class="filter-btn glow-btn" data-filter="languages">
+                            <span>لغات</span>
+                            <div class="btn-glow"></div>
+                        </button>
+                        <button class="filter-btn glow-btn" data-filter="academic">
+                            <span>أكاديمية</span>
+                            <div class="btn-glow"></div>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="books-grid" id="booksGrid">
+                    <!-- Enhanced Book Cards will be generated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Dynamic Statistics Section -->
+            <section class="stats-section-enhanced">
+                <div class="stats-background-effects">
+                    <div class="stats-orb orb-1"></div>
+                    <div class="stats-orb orb-2"></div>
+                </div>
+
+                <div class="stats-container">
+                    <div class="stat-item-enhanced">
+                        <div class="stat-icon-enhanced">
+                            <i class="fas fa-book"></i>
+                            <div class="icon-pulse"></div>
+                        </div>
+                        <div class="stat-info-enhanced">
+                            <span class="stat-number-enhanced" data-target="5000">0</span>
+                            <span class="stat-label-enhanced">كتاب متنوع</span>
+                        </div>
+                        <div class="stat-progress">
+                            <div class="progress-ring">
+                                <svg width="120" height="120">
+                                    <circle cx="60" cy="60" r="54" stroke="#1a1a1a" stroke-width="4" fill="transparent"/>
+                                    <circle cx="60" cy="60" r="54" stroke="#00d4ff" stroke-width="4" fill="transparent" 
+                                            stroke-linecap="round" class="progress-circle" data-percent="95"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-item-enhanced">
+                        <div class="stat-icon-enhanced">
+                            <i class="fas fa-users"></i>
+                            <div class="icon-pulse"></div>
+                        </div>
+                        <div class="stat-info-enhanced">
+                            <span class="stat-number-enhanced" data-target="10000">0</span>
+                            <span class="stat-label-enhanced">عميل راض</span>
+                        </div>
+                        <div class="stat-progress">
+                            <div class="progress-ring">
+                                <svg width="120" height="120">
+                                    <circle cx="60" cy="60" r="54" stroke="#1a1a1a" stroke-width="4" fill="transparent"/>
+                                    <circle cx="60" cy="60" r="54" stroke="#ff6b35" stroke-width="4" fill="transparent" 
+                                            stroke-linecap="round" class="progress-circle" data-percent="88"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-item-enhanced">
+                        <div class="stat-icon-enhanced">
+                            <i class="fas fa-globe"></i>
+                            <div class="icon-pulse"></div>
+                        </div>
+                        <div class="stat-info-enhanced">
+                            <span class="stat-number-enhanced" data-target="25">0</span>
+                            <span class="stat-label-enhanced">لغة مختلفة</span>
+                        </div>
+                        <div class="stat-progress">
+                            <div class="progress-ring">
+                                <svg width="120" height="120">
+                                    <circle cx="60" cy="60" r="54" stroke="#1a1a1a" stroke-width="4" fill="transparent"/>
+                                    <circle cx="60" cy="60" r="54" stroke="#ffd700" stroke-width="4" fill="transparent" 
+                                            stroke-linecap="round" class="progress-circle" data-percent="75"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-item-enhanced">
+                        <div class="stat-icon-enhanced">
+                            <i class="fas fa-award"></i>
+                            <div class="icon-pulse"></div>
+                        </div>
+                        <div class="stat-info-enhanced">
+                            <span class="stat-number-enhanced" data-target="15">0</span>
+                            <span class="stat-label-enhanced">سنة خبرة</span>
+                        </div>
+                        <div class="stat-progress">
+                            <div class="progress-ring">
+                                <svg width="120" height="120">
+                                    <circle cx="60" cy="60" r="54" stroke="#1a1a1a" stroke-width="4" fill="transparent"/>
+                                    <circle cx="60" cy="60" r="54" stroke="#9d4edd" stroke-width="4" fill="transparent" 
+                                            stroke-linecap="round" class="progress-circle" data-percent="92"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Enhanced Footer -->
+    <footer class="footer-enhanced">
+        <div class="footer-background-effects">
+            <div class="footer-orb orb-1"></div>
+            <div class="footer-orb orb-2"></div>
+            <div class="footer-orb orb-3"></div>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section company-info">
+                    <div class="footer-logo-enhanced">
+                        <div class="footer-book-icon">
+                            <i class="fas fa-book-open"></i>
+                            <div class="book-glow-footer"></div>
+                        </div>
+                        
+                        <!-- Footer Osiris Logo -->
+                        <div class="footer-osiris-logo">
+                            <img src="images/header.png" alt="Osiris Logo" class="footer-osiris-logo-img">
+                            <div class="footer-logo-glow"></div>
+                        </div>
+                        
+                        <div class="footer-text">
+                            <h3>مكتبة أوزيريس</h3>
+                            <p>للكتب العلمية والأكاديمية</p>
+                        </div>
+                    </div>
+
+                    <p class="company-description">
+                        مكتبتك المتخصصة في الكتب العلمية والأكاديمية منذ أكثر من 15 عاماً، نوفر أفضل المراجع والكتب من دور النشر العالمية المرموقة.
+                    </p>
+
+                    <div class="social-links-enhanced">
+                        <a href="#" class="social-link-enhanced facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <div class="social-glow"></div>
+                        </a>
+                        <a href="#" class="social-link-enhanced twitter">
+                            <i class="fab fa-twitter"></i>
+                            <div class="social-glow"></div>
+                        </a>
+                        <a href="#" class="social-link-enhanced instagram">
+                            <i class="fab fa-instagram"></i>
+                            <div class="social-glow"></div>
+                        </a>
+                        <a href="#" class="social-link-enhanced linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                            <div class="social-glow"></div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul class="footer-links-enhanced">
+                        <li><a href="#" class="footer-link-hover">الرئيسية</a></li>
+                        <li><a href="#" class="footer-link-hover">الكتب الجديدة</a></li>
+                        <li><a href="#" class="footer-link-hover">العروض الخاصة</a></li>
+                        <li><a href="#" class="footer-link-hover">من نحن</a></li>
+                        <li><a href="#" class="footer-link-hover">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div class="footer-section">
+                    <h4>فئات الكتب</h4>
+                    <ul class="footer-links-enhanced">
+                        <li><a href="#" class="footer-link-hover">القواميس والمعاجم</a></li>
+                        <li><a href="#" class="footer-link-hover">كتب اللغات</a></li>
+                        <li><a href="#" class="footer-link-hover">الكتب الأكاديمية</a></li>
+                        <li><a href="#" class="footer-link-hover">المراجع العلمية</a></li>
+                        <li><a href="#" class="footer-link-hover">كتب الترجمة</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section contact-info-enhanced">
+                    <h4>معلومات الاتصال</h4>
+                    <div class="contact-item-enhanced">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <span>50 شارع قصر النيل، ميدان مصطفى كامل<br>وسط البلد، القاهرة</span>
+                    </div>
+                    <div class="contact-item-enhanced">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <span>02239****</span>
+                    </div>
+                    <div class="contact-item-enhanced">
+                        <div class="contact-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <span>0100*****</span>
+                    </div>
+                    <div class="contact-item-enhanced">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <span>info@osirisbookshop.gmail</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom-enhanced">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 مكتبة أوزيريس للكتب العلمية. جميع الحقوق محفوظة.</p>
+                    <p>Powered by <strong>InnoCity</strong> for Information Technology</p>
+                </div>
+                <div class="footer-animation-line"></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-sun sun"></i>
+        <i class="fas fa-moon moon"></i>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="floating-action-btn" id="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+        <div class="fab-glow"></div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="home.js"></script>
+</body>
+
+</html>
